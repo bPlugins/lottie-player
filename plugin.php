@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Lottie Player- Gutenberg Block
  * Description: Lottie player for display lottie files.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: bPlugins LLC
  * Author URI: http://bplugins.com
  * License: GPLv3
@@ -14,7 +14,7 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Constant
-define( 'LPB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
+define( 'LPB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.1' );
 define( 'LPB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
 
 // Generate Styles
@@ -43,8 +43,7 @@ class LPBLottiePlayer{
     protected static $_instance = null;
 
     function __construct(){
-        add_action( 'enqueue_block_assets', [$this, 'enqueue_block_assets'] );
-        add_action( 'init', [$this, 'register'] );
+        add_action( 'init', [$this, 'onInit'] );
     }
 
     public static function instance(){
@@ -54,48 +53,21 @@ class LPBLottiePlayer{
         return self::$_instance;
     }
 
-    function enqueue_block_assets(){ wp_enqueue_script( 'fontAwesomeKit', LPB_ASSETS_DIR . 'js/font-awesome-kit.js', [], LPB_PLUGIN_VERSION, true ); }
+    function onInit() {
+        wp_register_style( 'lpb-lottie-player-editor-style', plugins_url( 'dist/editor.css', __FILE__ ), [ 'wp-edit-blocks' ], LPB_PLUGIN_VERSION ); // Backend Style
+        wp_register_style( 'lpb-lottie-player-style', plugins_url( 'dist/style.css', __FILE__ ), [ 'wp-editor' ], LPB_PLUGIN_VERSION ); // Frontend Style
 
-    function register() {
-        wp_register_script( 'lpb_editor_script', plugins_url( 'dist/editor.js', __FILE__ ), [ 'wp-blob', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-data', 'wp-element', 'wp-html-entities', 'wp-i18n', 'wp-rich-text', 'fontAwesomeKit' ], LPB_PLUGIN_VERSION, false ); // Backend Script
-        wp_register_style( 'lpb_editor_style', plugins_url( 'dist/editor.css', __FILE__ ), [ 'wp-edit-blocks' ], LPB_PLUGIN_VERSION ); // Backend Style
-        wp_register_script( 'lpb_script', plugins_url( 'dist/script.js', __FILE__ ), [ 'jquery', 'fontAwesomeKit' ], LPB_PLUGIN_VERSION, true ); // Frontend Script
-        wp_register_style( 'lpb_style', plugins_url( 'dist/style.css', __FILE__ ), [ 'wp-editor' ], LPB_PLUGIN_VERSION ); // Frontend Style
-
-        register_block_type( 'lpb/lottie-player', [
-            'editor_script' => 'lpb_editor_script',
-            'editor_style'  => 'lpb_editor_style',
-            'script'        => 'lpb_script',
-            'style'         => 'lpb_style',
+        register_block_type( __DIR__, [
+            'editor_style'  => 'lpb-lottie-player-editor-style',
+            'style'         => 'lpb-lottie-player-style',
             'render_callback' => [$this, 'render']
         ] ); // Register Block
         
-        wp_set_script_translations( 'lpb_editor_script', 'lottie-player', plugin_dir_path( __FILE__ ) . 'languages' ); // Translate
+        wp_set_script_translations( 'lpb-lottie-player-editor-script', 'lottie-player', plugin_dir_path( __FILE__ ) . 'languages' ); // Translate
     }
 
     function render( $attributes ){
         extract( $attributes );
-        $align = $align ?? '';
-        $cId = $cId ?? '';
-        $playerAlign = $playerAlign ?? 'center';
-        $file = $file ?? 'https://assets4.lottiefiles.com/datafiles/zc3XRzudyWE36ZBJr7PIkkqq0PFIrIBgp4ojqShI/newAnimation.json';
-        $isControls = $isControls ?? true;
-        $isAutoplay = $isAutoplay ?? true;
-        $isLoop = $isLoop ?? true;
-        $isHover = $isHover ?? false;
-        $mode = $mode ?? 'normal';
-        $count = $count ?? 0;
-        $speed = $speed ?? 1;
-        $intermission = $intermission ?? 0;
-        $width = $width ?? '450px';
-        $background = $background ?? '#0000';
-        $controlsHeight = $controlsHeight ?? '35px';
-        $controlsBG = $controlsBG ?? '#0000';
-        $controlsIconColor = $controlsIconColor ?? '#4527a4';
-        $controlsIconHoverColor = $controlsIconHoverColor ?? '#8344c5';
-        $controlsIconActiveColor = $controlsIconActiveColor ?? '#8344c5';
-        $controlsTrackColor = $controlsTrackColor ?? '#8344c5';
-        $controlsThumbColor = $controlsThumbColor ?? '#4527a4';
 
         // Generate Styles
         $lottiePlayerStyle = new LPBStyleGenerator();

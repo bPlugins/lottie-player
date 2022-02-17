@@ -10,7 +10,7 @@ import options from './Const/options';
 const { modes, generalStyleTabs, pxUnit, perUnit, emUnit } = options;
 
 const Settings = ({ attributes, setAttributes }) => {
-    const { playerAlign, file, isControls, isAutoplay, isLoop, isHover, mode, count, speed, intermission, width, background, controlsHeight, controlsBG, controlsIconColor, controlsIconHoverColor, controlsIconActiveColor, controlsTrackColor, controlsThumbColor } = attributes;
+    const { playerAlign, file, isControls, isAutoplay, isLoop, isHover, mode, count, speed, intermission, link, width, background, controlsHeight, controlsBG, controlsIconColor, controlsIconHoverColor, controlsIconActiveColor, controlsTrackColor, controlsThumbColor } = attributes;
 
     return <>
         <InspectorControls>
@@ -41,6 +41,10 @@ const Settings = ({ attributes, setAttributes }) => {
 
                         <Title>{__('Interval (s):', 'lottie-player')}</Title>
                         <RangeControl value={intermission} onChange={val => setAttributes({ intermission: val })} min={0} max={20} step={.01} />
+
+                        <Title mt='0'>{__('Link the player:', 'lottie-player')}</Title>
+                        <TextControl value={link} onChange={val => setAttributes({ link: val })} />
+                        <small>{__('If you want to link the player, enter the link here. Otherwise, leave as blank.')}</small>
                     </PanelBody>
                 </>}
 

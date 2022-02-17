@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Lottie Player- Gutenberg Block
  * Description: Lottie player for display lottie files.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: bPlugins LLC
  * Author URI: http://bplugins.com
  * License: GPLv3
@@ -14,7 +14,7 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Constant
-define( 'LPB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.1' );
+define( 'LPB_PLUGIN_VERSION', 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.2' );
 define( 'LPB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
 
 // Generate Styles
@@ -40,17 +40,8 @@ class LPBStyleGenerator {
 
 // Lottie Player
 class LPBLottiePlayer{
-    protected static $_instance = null;
-
     function __construct(){
         add_action( 'init', [$this, 'onInit'] );
-    }
-
-    public static function instance(){
-        if( self::$_instance === null ){
-            self::$_instance = new self();
-        }
-        return self::$_instance;
     }
 
     function onInit() {
@@ -87,28 +78,38 @@ class LPBLottiePlayer{
 
         $jsonData = wp_json_encode( [ 'isControls' => $isControls, 'isAutoplay' => $isAutoplay, 'isLoop' => $isLoop, 'isHover' => $isHover ] );
 
+        $intermissionMS = $intermission * 1000;
+        $lottiePlayer = "<lottie-player
+                controls
+                autoplay
+                loop
+                mode='$mode'
+                background='$background'
+                count='$count'
+                speed='$speed'
+                direction='1'
+                intermission='$intermissionMS'
+                src='$file'
+            ></lottie-player>";
+
         ob_start(); ?>
         <div class='wp-block-lpb-lottie-player <?php echo 'align' . esc_attr( $align ); ?>' id='lpbLottiePlayer-<?php echo esc_attr( $cId ); ?>' data-controls='<?php echo esc_attr( $jsonData ); ?>'>
             <style><?php echo wp_kses( $lottiePlayerStyle::renderStyle(), [] ); ?></style>
 
-            <div class='lpbLottiePlayer'>
-                <lottie-player
-                    controls
-                    autoplay
-                    loop
-                    mode='<?php echo esc_attr( $mode ); ?>'
-                    background='<?php echo esc_attr( $background ); ?>'
-                    count='<?php echo esc_attr( $count ); ?>'
-                    speed='<?php echo esc_attr( $speed ); ?>'
-                    direction='1'
-                    intermission='<?php echo esc_attr( $intermission * 1000 ); ?>'
-                    src='<?php echo esc_attr( $file ); ?>'
-                >
-                </lottie-player>
-            </div>
+            <?php echo $link ? "<div class='lpbLottiePlayer'>
+                <a href='". esc_url( $link ) ."'>". wp_kses( $lottiePlayer, [
+                    'lottie-player' => [
+                        'controls' => [], 'autoplay' => [], 'loop' => [], 'mode' => [], 'background' => [], 'count' => [], 'speed' => [], 'direction' => [], 'intermission' => [], 'src' => []
+                    ]
+                ] ) ."</a>
+            </div>" : "<div class='lpbLottiePlayer'>". wp_kses( $lottiePlayer, [
+                'lottie-player' => [
+                    'controls' => [], 'autoplay' => [], 'loop' => [], 'mode' => [], 'background' => [], 'count' => [], 'speed' => [], 'direction' => [], 'intermission' => [], 'src' => []
+                ]
+            ] ) ."</div>"; ?>
         </div>
         <?php $lottiePlayerStyle::$styles = []; // Empty styles
         return ob_get_clean();
     } // Render
 }
-LPBLottiePlayer::instance();
+new LPBLottiePlayer;

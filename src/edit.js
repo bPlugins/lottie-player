@@ -3,7 +3,7 @@ import { useEffect } from '@wordpress/element';
 import Settings from './settings';
 
 const Edit = props => {
-    const { className, attributes: { playerAlign, file, isControls, isAutoplay, isLoop, isHover, mode, count, speed, intermission, width, background, controlsHeight, controlsBG, controlsIconColor, controlsIconHoverColor, controlsIconActiveColor, controlsTrackColor, controlsThumbColor }, setAttributes, clientId } = props;
+    const { className, attributes: { playerAlign, file, isControls, isAutoplay, isLoop, isHover, mode, count, speed, intermission, link, width, background, controlsHeight, controlsBG, controlsIconColor, controlsIconHoverColor, controlsIconActiveColor, controlsTrackColor, controlsThumbColor }, setAttributes, clientId } = props;
 
     useEffect(() => { clientId && setAttributes({ cId: clientId }); }, [clientId]); // Set & Update clientId to cId
 
@@ -44,6 +44,7 @@ const Edit = props => {
                 }
                 #lpbLottiePlayer-${clientId} .lpbLottiePlayer lottie-player{
                     width: ${width};
+                    cursor: ${link ? 'pointer' : 'auto'};
                     --lottie-player-toolbar-height: ${controlsHeight};
                     --lottie-player-toolbar-background-color: ${controlsBG};
                     --lottie-player-toolbar-icon-color: ${controlsIconColor};

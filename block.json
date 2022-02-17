@@ -59,6 +59,10 @@
             "type": "number",
             "default": 0
         },
+        "link": {
+            "type": "string",
+            "default": ""
+        },
         "width": {
             "type": "string",
             "default": "450px"

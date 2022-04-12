@@ -1,25 +1,25 @@
 $primaryColor: #4527a4;
 
 // Common CSS
-html{
-    scroll-behavior: smooth;
+html {
+	scroll-behavior: smooth;
 }
 
 // Dashicon
-.dashicons{
-    font-family: dashicons !important;
+.dashicons {
+	font-family: dashicons !important;
 }
 
 // Lottie Player
 .wp-block-lpb-lottie-player {
-    .lpbLottiePlayer{
-        lottie-player{
-            display: inline-flex;
-            max-width: 100%;
+	.lpbLottiePlayer {
+		lottie-player {
+			display: inline-flex;
+			max-width: 100%;
 
-            #lottie-controls.toolbar{
-                margin: 0;
-            }
-        }
-    } 
+			#lottie-controls.toolbar {
+				margin: 0;
+			}
+		}
+	}
 }

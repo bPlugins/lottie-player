@@ -18,9 +18,9 @@ const Settings = ({ attributes, setAttributes }) => {
 			<TabPanel className='bPlTabPanel' activeClass='activeTab' tabs={generalStyleTabs}>{tab => <>
 				{'general' == tab.name && <>
 					<PanelBody className='bPlPanelBody help' title={__('Help', 'lottie-player')}>
-						{/* <div className='helpItem'>
-							<a href='https://bblockswp.com/docs/lottie-player/' target='_blank' rel='noreferrer'><Dashicon icon='book' size={23} />{__('Read Documentation', 'lottie-player')}</a>
-						</div> */}
+						<div className='helpItem'>
+							<a href='https://bblockswp.com/docs/lottie-player-block/' target='_blank' rel='noreferrer'><Dashicon icon='book' size={23} />{__('Read Documentation', 'lottie-player')}</a>
+						</div>
 
 						<div className='helpItem rateUs'>
 							<a href='https://wordpress.org/support/plugin/embed-lottie-player/reviews/#new-post' target='_blank' rel='noreferrer'>

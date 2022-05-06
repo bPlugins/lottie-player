@@ -1,8 +1,8 @@
 import { useEffect } from '@wordpress/element';
-import LottiePlayer from './LottiePlayer';
 
 import Settings from './Settings';
 import Style from './Style';
+import LottiePlayer from './LottiePlayer';
 
 const Edit = props => {
 	const { className, attributes, setAttributes, clientId } = props;

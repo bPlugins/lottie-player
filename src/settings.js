@@ -1,17 +1,16 @@
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, AlignmentToolbar, BlockControls } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, ToggleControl, RangeControl, __experimentalUnitControl as UnitControl, TextControl, TabPanel, Dashicon } from '@wordpress/components';
+import { PanelBody, ToggleControl, __experimentalUnitControl as UnitControl, TextControl, TabPanel, Dashicon } from '@wordpress/components';
 
 // Settings Components
 import Title from '../../Components/Title';
 import BColor from '../../Components/BColor';
-import BtnGroup from '../../Components/BtnGroup';
 
 import options from './Const/options';
-const { modes, generalStyleTabs, pxUnit, perUnit, emUnit } = options;
+const { generalStyleTabs, pxUnit, perUnit, emUnit } = options;
 
 const Settings = ({ attributes, setAttributes }) => {
-	const { playerAlign, file, isControls, isAutoplay, isLoop, isHover, mode, count, speed, intermission, link, width, background, controlsHeight, controlsBG, controlsIconColor, controlsIconHoverColor, controlsIconActiveColor, controlsTrackColor, controlsThumbColor } = attributes;
+	const { playerAlign, file, isControls, isAutoplay, isLoop, link, width, background, controlsHeight, controlsBG, controlsIconColor, controlsIconHoverColor, controlsIconActiveColor, controlsTrackColor, controlsThumbColor } = attributes;
 
 	return <>
 		<InspectorControls>
@@ -30,6 +29,7 @@ const Settings = ({ attributes, setAttributes }) => {
 						</div>
 					</PanelBody>
 
+
 					<PanelBody className='bPlPanelBody' title={__('Player Settings', 'lottie-player')}>
 						<Title mt='0'>{__('Lottie Json file url:', 'lottie-player')}</Title>
 						<TextControl value={file} onChange={val => setAttributes({ file: val })} />
@@ -40,7 +40,7 @@ const Settings = ({ attributes, setAttributes }) => {
 
 						<ToggleControl label={__('Enable Loop', 'lottie-player')} checked={isLoop} onChange={val => setAttributes({ isLoop: val })} />
 
-						<ToggleControl label={__('Enable Hover', 'lottie-player')} checked={isHover} onChange={val => setAttributes({ isHover: val })} />
+						{/* <ToggleControl label={__('Enable Hover', 'lottie-player')} checked={isHover} onChange={val => setAttributes({ isHover: val })} />
 
 						<PanelRow className='mt20'>
 							<Title mt='0' mb='0'>{__('Mode:', 'lottie-player')}</Title>
@@ -54,7 +54,7 @@ const Settings = ({ attributes, setAttributes }) => {
 						<RangeControl value={speed} onChange={val => setAttributes({ speed: val })} min={0.01} max={20} step={.01} />
 
 						<Title>{__('Interval (s):', 'lottie-player')}</Title>
-						<RangeControl value={intermission} onChange={val => setAttributes({ intermission: val })} min={0} max={20} step={.01} />
+						<RangeControl value={intermission} onChange={val => setAttributes({ intermission: val })} min={0} max={20} step={.01} /> */}
 
 						<Title mt='0'>{__('Link the player:', 'lottie-player')}</Title>
 						<TextControl value={link} onChange={val => setAttributes({ link: val })} />
@@ -62,14 +62,16 @@ const Settings = ({ attributes, setAttributes }) => {
 					</PanelBody>
 				</>}
 
+
 				{'style' == tab.name && <>
-					<PanelBody className='bPlPanelBody' title={__('Player Styles', 'lottie-player')}>
+					<PanelBody className='bPlPanelBody' title={__('Player', 'lottie-player')}>
 						<UnitControl label={__('Width:', 'lottie-player')} labelPosition='left' value={width} onChange={val => setAttributes({ width: val })} units={[pxUnit, perUnit, emUnit]} />
 
 						<BColor label={__('Background Color:', 'lottie-player')} value={background} onChange={val => setAttributes({ background: val })} defaultColor='#0000' />
 					</PanelBody>
 
-					<PanelBody className='bPlPanelBody' title={__('Controls Styles', 'lottie-player')} initialOpen={false}>
+
+					<PanelBody className='bPlPanelBody' title={__('Controls', 'lottie-player')} initialOpen={false}>
 						<UnitControl label={__('Height:', 'lottie-player')} labelPosition='left' value={controlsHeight} onChange={val => setAttributes({ controlsHeight: val })} units={[pxUnit, perUnit, emUnit]} />
 
 						<BColor label={__('Background Color:', 'lottie-player')} value={controlsBG} onChange={val => setAttributes({ controlsBG: val })} defaultColor='#0000' />

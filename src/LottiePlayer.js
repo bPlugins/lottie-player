@@ -1,16 +1,21 @@
 const LottiePlayer = ({ attributes }) => {
-	const { file, mode, count, speed, intermission, background } = attributes;
+	const { file, background } = attributes;
 
 	return <lottie-player
 		src={file}
 		controls
 		autoplay
 		loop
-		mode={mode}
-		count={count}
-		speed={speed}
+		// mode={mode}
+		// count={count}
+		// speed={speed}
+		// direction={1}
+		// intermission={intermission * 1000}
+		mode='normal'
+		count={0}
+		speed={1}
 		direction={1}
-		intermission={intermission * 1000}
+		intermission={0}
 		background={background}
 	></lottie-player>
 }

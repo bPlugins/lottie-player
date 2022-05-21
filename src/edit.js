@@ -6,7 +6,7 @@ import LottiePlayer from './LottiePlayer';
 
 const Edit = props => {
 	const { className, attributes, setAttributes, clientId } = props;
-	const { file, isControls, isAutoplay, isLoop, isHover, mode, count, speed, intermission, background } = attributes;
+	const { file, isControls, isAutoplay, isLoop, background } = attributes;
 
 	useEffect(() => { clientId && setAttributes({ cId: clientId.substring(0, 10) }); }, [clientId]); // Set & Update clientId to cId
 
@@ -25,16 +25,21 @@ const Edit = props => {
 		toggleAttr(reInitPlayer, isControls, 'controls', '');
 		toggleAttr(reInitPlayer, isAutoplay, 'autoplay', '');
 		toggleAttr(reInitPlayer, isLoop, 'loop', '');
-		toggleAttr(reInitPlayer, isHover, 'hover', '');
-		toggleAttr(reInitPlayer, mode, 'mode', mode);
-		toggleAttr(reInitPlayer, count, 'count', count);
-		toggleAttr(reInitPlayer, speed, 'speed', speed);
+		// toggleAttr(reInitPlayer, isHover, 'hover', '');
+		// toggleAttr(reInitPlayer, mode, 'mode', mode);
+		// toggleAttr(reInitPlayer, count, 'count', count);
+		// toggleAttr(reInitPlayer, speed, 'speed', speed);
+		// toggleAttr(reInitPlayer, true, 'direction', 1);
+		// toggleAttr(reInitPlayer, intermission, 'intermission', intermission * 1000);
+		toggleAttr(reInitPlayer, true, 'mode', 'normal');
+		toggleAttr(reInitPlayer, true, 'count', 0);
+		toggleAttr(reInitPlayer, true, 'speed', 1);
 		toggleAttr(reInitPlayer, true, 'direction', 1);
-		toggleAttr(reInitPlayer, intermission, 'intermission', intermission * 1000);
+		toggleAttr(reInitPlayer, true, 'intermission', 0);
 		toggleAttr(reInitPlayer, background, 'background', background);
 
 		lottieWrapper ? lottieWrapper.appendChild(reInitPlayer) : '';
-	}, [file, isControls, isAutoplay, isLoop, isHover, mode, count, speed, intermission, background]);
+	}, [file, isControls, isAutoplay, isLoop, background]);
 
 	return <>
 		<Settings attributes={attributes} setAttributes={setAttributes} />

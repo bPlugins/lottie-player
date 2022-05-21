@@ -12,6 +12,10 @@ html {
 
 // Lottie Player
 .wp-block-lpb-lottie-player {
+	* {
+		box-sizing: border-box;
+	}
+
 	.lpbLottiePlayer {
 		lottie-player {
 			display: inline-flex;

@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			<RenderLottiePlayer attributes={attributes} clientId={attributes.cId} />
 		</>, player);
 
-		player?.removeAttribute('data-attributes')
+		player?.removeAttribute('data-attributes');
 	});
 });
 
 const RenderLottiePlayer = ({ attributes, clientId }) => {
-	const { isControls, isAutoplay, isLoop, isHover, link } = attributes;
+	const { isControls, isAutoplay, isLoop, link } = attributes;
 
 	useEffect(() => {
 		const lottiePlayer = document.querySelector(`#lpbLottiePlayer-${clientId} .lpbLottiePlayer lottie-player`);
@@ -35,7 +35,7 @@ const RenderLottiePlayer = ({ attributes, clientId }) => {
 		toggleAttr(isControls, 'controls', '');
 		toggleAttr(isAutoplay, 'autoplay', '');
 		toggleAttr(isLoop, 'loop', '');
-		toggleAttr(isHover, 'hover', '');
+		// toggleAttr(isHover, 'hover', '');
 	}, []);
 
 	return <div className='lpbLottiePlayer'>

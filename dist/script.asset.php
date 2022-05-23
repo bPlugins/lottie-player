@@ -1,5 +1,5 @@
 <?php
 return [
-	'dependencies' => [ 'wp-element' ],
+	'dependencies' => [ 'wp-element', 'lottiePlayer' ],
 	'version' => LPB_PLUGIN_VERSION
 ];

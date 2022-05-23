@@ -4,23 +4,44 @@ Donate link: https://gum.co/wpdonate/
 Tags: block, lottie player, json player, lottie animation, Gutenberg block
 Requires at least: 5.0+
 Tested up to: 5.9.3
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-A powerful web player for Wordpress Website. Implement Lottie animations on a website in just a few clicks.
+Embed LottieFiles animations.
 
 == Description ==
 
-A powerful web player for Wordpress Website. Implement Lottie animations on a website in just a few clicks.
+Lottie Player is a helpful block Plugin for WordPress's Gutenberg block editor. It contains many features that help you embed LottieFiles animation into your WordPress websites. LottieFiles provides animation, and motion graphics assets for modern websites.
+
+You can embed any LottieFiles animations, json files to your WordPress Posts, Pages, Widgets and more. This plugin packed with many useful features. You can show your Lottie files exactly the way you want. This plugin has a huge number of options that you can use to achieve your desired goal.
 
 
-**[Demos](https://bblockswp.com/demo/lottie-player/)**
+**[Live Demo](https://lpb.bplugins.com/)**
+**[Buy The PRO Version](https://lpb.bplugins.com/buy-now/)**
 
 
 = Features =
 - **Fully Customizable**: All the options you need to arrange the showcase to your liking are available here.
+
+- **Custom styles**: Apply styles in Player such as width, alignment, background color. Also, apply control height, background color, icons color, icons hover color, icons active colors, track color, thumb color.
+
+- **Lightweight**: A single JavaScript library is used that makes the player very Lightweight.
+
+
+= Pro Features =
+- **Upload File:** Upload lottie json file from media library.
+
+- **Direction:** Direction settings in lottie player.
+
+- **Link tab:** Option for open link in new tab.
+
+- **Interactivity:** Interactivity option in lottie player.
+
+- **Caption:** Display the caption for lottie player.
+
+- **Caption Style:** Style the caption, such as text align, typography, colors(text and background), padding and margin.
 
 
 = How to use =
@@ -106,6 +127,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 == Changelog ==
 
 = 1.0.5 =
+* Pro Release
+
+= 1.0.5 =
 * Performance Improvement
 
 = 1.0.4 =
@@ -126,6 +150,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+* Pro Release
 
 = 1.0.5 =
 * Performance Improvement

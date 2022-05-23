@@ -3,7 +3,7 @@
 	"name": "lpb/lottie-player",
 	"title": "Lottie Player",
 	"description": "Lottie player for display lottie files.",
-	"category": "widgets",
+	"category": "LPBlock",
 	"keywords": [
 		"lottie player",
 		"json player",

@@ -12,9 +12,7 @@
 	},
 	"author": "Wasek Bellah",
 	"license": "ISC",
-	"dependencies": {
-		"@lottiefiles/lottie-player": "^1.5.1"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"@babel/core": "^7.16.12",
 		"@babel/preset-env": "^7.16.11",

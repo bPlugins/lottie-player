@@ -1,9 +1,9 @@
 import { render, useEffect } from '@wordpress/element';
-import '@lottiefiles/lottie-player'; // Lottie player assets
 
 import './style.scss';
 import Style from './Style';
 import LottiePlayer from './LottiePlayer';
+import { toggleAttr } from './Const/functions';
 
 // Lottie Player
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,15 +27,10 @@ const RenderLottiePlayer = ({ attributes, clientId }) => {
 	useEffect(() => {
 		const lottiePlayer = document.querySelector(`#lpbLottiePlayer-${clientId} .lpbLottiePlayer lottie-player`);
 
-		const toggleAttr = (condition, attribute, value) => {
-			condition && lottiePlayer?.setAttribute(attribute, value);
-			!condition && lottiePlayer?.removeAttribute(attribute, value);
-		}
-
-		toggleAttr(isControls, 'controls', '');
-		toggleAttr(isAutoplay, 'autoplay', '');
-		toggleAttr(isLoop, 'loop', '');
-		// toggleAttr(isHover, 'hover', '');
+		toggleAttr(lottiePlayer, isControls, 'controls', '');
+		toggleAttr(lottiePlayer, isAutoplay, 'autoplay', '');
+		toggleAttr(lottiePlayer, isLoop, 'loop', '');
+		// toggleAttr(lottiePlayer, isHover, 'hover', '');
 	}, []);
 
 	return <div className='lpbLottiePlayer'>

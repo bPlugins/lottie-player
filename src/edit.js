@@ -3,6 +3,7 @@ import { useEffect } from '@wordpress/element';
 import Settings from './Settings';
 import Style from './Style';
 import LottiePlayer from './LottiePlayer';
+import { toggleAttr } from './Const/functions';
 
 const Edit = props => {
 	const { className, attributes, setAttributes, clientId } = props;
@@ -12,10 +13,6 @@ const Edit = props => {
 
 	// Set or Remove attributes
 	const lottieWrapper = document.querySelector(`#lpbLottiePlayer-${clientId} .lpbLottiePlayer`);
-	const toggleAttr = (selector, condition, attribute, value) => {
-		condition && selector?.setAttribute(attribute, value);
-		!condition && selector?.removeAttribute(attribute, value);
-	}
 
 	useEffect(() => {
 		lottieWrapper ? lottieWrapper.innerHTML = '' : '';

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Lottie Player - Block
  * Description: Lottie player for display lottie files.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: bPlugins LLC
  * Author URI: http://bplugins.com
  * License: GPLv3
@@ -14,13 +14,29 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Constant
-define( 'LPB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.5' );
+define( 'LPB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.6' );
 define( 'LPB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
 
 // Lottie Player
 class LPBLottiePlayer{
 	function __construct(){
 		add_action( 'init', [$this, 'onInit'] );
+		add_action( 'enqueue_block_assets', [$this, 'enqueueBlockAssets'] );
+
+		if ( version_compare( $GLOBALS['wp_version'], '5.8-alpha-1', '<' ) ) {
+			add_filter( 'block_categories', [$this, 'blockCategories'] );
+		} else { add_filter( 'block_categories_all', [$this, 'blockCategories'] ); }
+	}
+
+	function blockCategories( $categories ){
+		return array_merge( [[
+			'slug'	=> 'LPBlock',
+			'title'	=> 'Lottie Player Block',
+		] ], $categories );
+	} // Categories
+
+	function enqueueBlockAssets(){
+		wp_enqueue_script( 'lottiePlayer', LPB_ASSETS_DIR . 'js/lottie-player.js', [], '1.5.7', true );
 	}
 
 	function onInit() {

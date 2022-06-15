@@ -1,5 +1,5 @@
 <?php
 return [
-	'dependencies' => [ 'wp-blob', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-data', 'wp-element', 'wp-html-entities', 'wp-i18n', 'wp-rich-text', 'lottiePlayer' ],
+	'dependencies' => [ 'wp-element', 'wp-blocks', 'wp-block-editor', 'wp-i18n', 'wp-components', 'lottiePlayer' ],
 	'version' => LPB_PLUGIN_VERSION
 ];

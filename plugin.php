@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Lottie Player - Block
  * Description: Lottie player for display lottie files.
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: bPlugins LLC
  * Author URI: http://bplugins.com
  * License: GPLv3
@@ -14,7 +14,7 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Constant
-define( 'LPB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.6' );
+define( 'LPB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.7' );
 define( 'LPB_ASSETS_DIR', plugin_dir_url( __FILE__ ) . 'assets/' );
 
 // Lottie Player
@@ -36,12 +36,19 @@ class LPBLottiePlayer{
 	} // Categories
 
 	function enqueueBlockAssets(){
-		wp_enqueue_script( 'lottiePlayer', LPB_ASSETS_DIR . 'js/lottie-player.js', [], '1.5.7', true );
+		if ( is_admin() || has_block( 'lpb/lottie-player', get_the_ID() ) ){
+			wp_enqueue_script( 'lottiePlayer', LPB_ASSETS_DIR . 'js/lottie-player.js', [], '1.5.7', true );
+
+			wp_register_style( 'lpb-lottie-player-style', plugins_url( 'dist/style.css', __FILE__ ), [ 'wp-editor' ], LPB_PLUGIN_VERSION ); // Frontend Style
+		}
+
+		if( !is_admin() && !has_block( 'lpb/lottie-player', get_the_ID() ) ){
+			wp_dequeue_script('lpb-lottie-player-script');
+		}
 	}
 
 	function onInit() {
 		wp_register_style( 'lpb-lottie-player-editor-style', plugins_url( 'dist/editor.css', __FILE__ ), [ 'wp-edit-blocks' ], LPB_PLUGIN_VERSION ); // Backend Style
-		wp_register_style( 'lpb-lottie-player-style', plugins_url( 'dist/style.css', __FILE__ ), [ 'wp-editor' ], LPB_PLUGIN_VERSION ); // Frontend Style
 
 		register_block_type( __DIR__, [
 			'editor_style'		=> 'lpb-lottie-player-editor-style',

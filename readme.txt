@@ -1,9 +1,9 @@
 === Lottie Player block - Implement Lottie animations. ===
 Contributors: abuhayat, charlescormier
 Donate link: https://gum.co/wpdonate/
-Tags: block, lottie player, json player, lottie animation, Gutenberg block
+Tags: lottie, block, Gutenberg block, animation, animations, motion
 Requires at least: 5.0+
-Tested up to: 6.0
+Tested up to: 6.0.1
 Stable tag: 1.0.7
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -126,6 +126,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 1.0.8 =
+* Fix free-pro activation conflict.
+
 = 1.0.7 =
 * Add translate feature
 
@@ -156,6 +159,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.0.8 =
+* Fix free-pro activation conflict.
 
 = 1.0.7 =
 * Add translate feature

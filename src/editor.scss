@@ -2,68 +2,68 @@ $primaryColor: #4527a4;
 $secondaryColor: #8344c5;
 
 .lpbUpgradeProToggle {
-    .components-form-toggle {
-        opacity: .75;
-    }
+	.components-form-toggle {
+		opacity: .75;
+	}
 }
 
 .lpbProGroupBtn {
-    position: relative;
+	position: relative;
 
-    &::before {
-        content: 'Pro';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        background: $primaryColor;
-        padding: 2px 8px;
-        border-radius: 50px;
-        z-index: 10;
-        display: none;
-    }
+	&::before {
+		content: 'Pro';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: #fff;
+		background: $primaryColor;
+		padding: 2px 8px;
+		border-radius: 50px;
+		z-index: 10;
+		display: none;
+	}
 
-    &:hover::before {
-        display: block;
-    }
+	&:hover::before {
+		display: block;
+	}
 
-    svg {
-        opacity: .75;
-    }
+	svg {
+		opacity: .75;
+	}
 }
 
 .lpbMutedText {
-    opacity: .75;
+	opacity: .75;
 }
 
 .lpbUpgradePro {
-    color: #fff;
-    background: $primaryColor;
-    padding: 2px 8px;
-    margin: 0 0 0 5px;
-    border-radius: 50px;
-    cursor: pointer;
+	color: #fff;
+	background: $primaryColor;
+	padding: 2px 8px;
+	margin: 0 0 0 5px;
+	border-radius: 50px;
+	cursor: pointer;
 }
 
 .lpbUpgradeProText {
-    font-size: 15px;
+	font-size: 15px;
 }
 
 .lpbUpgradeProLearnMore {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 500;
-    color: #fff;
-    background-color: $primaryColor;
-    text-decoration: none;
-    padding: 12px 20px;
-    margin-top: 20px;
-    border-radius: 50px;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+	background-color: $primaryColor;
+	text-decoration: none;
+	padding: 12px 20px;
+	margin-top: 20px;
+	border-radius: 50px;
 
-    &:hover,
-    &:focus {
-        color: #fff;
-        background-color: $secondaryColor;
-    }
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: $secondaryColor;
+	}
 }

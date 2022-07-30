@@ -6,6 +6,7 @@ import { PanelBody, ToggleControl, __experimentalUnitControl as UnitControl, Tex
 // Settings Components
 import Title from '../../Components/Title';
 import BColor from '../../Components/BColor';
+import { tabController } from '../../Components/Helper/functions';
 
 import options from './Const/options';
 const { interactivities, generalStyleTabs, pxUnit, perUnit, emUnit } = options;
@@ -21,22 +22,21 @@ const Settings = ({ attributes, setAttributes }) => {
 
 	const ProSelect = ({ className, label, options }) => <>
 		<ProTitle label={label} />
-		<SelectControl className={`lpbUpgradeProSelect ${className}`} onChange={() => setIsProModal(true)} options={options}>
-		</SelectControl>
+		<SelectControl className={`lpbUpgradeProSelect ${className}`} onChange={() => setIsProModal(true)} options={options} />
 	</>
 
 	return <>
 		<InspectorControls>
-			<TabPanel className='bPlTabPanel' activeClass='activeTab' tabs={generalStyleTabs}>{tab => <>
+			<TabPanel className='bPlTabPanel' activeClass='activeTab' tabs={generalStyleTabs} onSelect={() => tabController()}>{tab => <>
 				{'general' == tab.name && <>
-					<PanelBody className='bPlPanelBody help' title={__('Help', 'lottie-player')}>
+					<PanelBody className='bPlPanelBody help' title={__('Help', 'lottie-player')} initialOpen={false}>
 						<div className='helpItem'>
-							<a href='https://lpb.bplugins.com/docs/' target='_blank' rel='noreferrer'><Dashicon icon='book' size={23} />{__('Read Documentation', 'lottie-player')}</a>
+							<a href='https://lpb.bplugins.com/docs/' target='_blank' rel='noreferrer'><Dashicon icon='book' />{__('Read Documentation', 'lottie-player')}</a>
 						</div>
 
 						<div className='helpItem rateUs'>
 							<a href='https://wordpress.org/support/plugin/embed-lottie-player/reviews/#new-post' target='_blank' rel='noreferrer'>
-								<span><Dashicon icon='star-filled' size={23} />{__('Would you please rate us?', 'lottie-player')}</span>
+								<span><Dashicon icon='star-filled' />{__('Would you please rate us?', 'lottie-player')}</span>
 								<span>{__('We are new and we need your help to grow!🙏', 'lottie-player')}</span>
 							</a>
 						</div>

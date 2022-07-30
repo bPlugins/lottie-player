@@ -1,15 +1,19 @@
 import { useEffect } from '@wordpress/element';
 
+import { tabController } from '../../Components/Helper/functions';
+
 import Settings from './Settings';
 import Style from './Style';
 import LottiePlayer from './LottiePlayer';
 import { toggleAttr } from './Const/functions';
 
 const Edit = props => {
-	const { className, attributes, setAttributes, clientId } = props;
+	const { className, attributes, setAttributes, clientId, isSelected } = props;
 	const { file, isControls, isAutoplay, isLoop, background } = attributes;
 
 	useEffect(() => { clientId && setAttributes({ cId: clientId.substring(0, 10) }); }, [clientId]); // Set & Update clientId to cId
+
+	useEffect(() => tabController(), [isSelected]);
 
 	// Set or Remove attributes
 	const lottieWrapper = document.querySelector(`#lpbLottiePlayer-${clientId} .lpbLottiePlayer`);

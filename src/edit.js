@@ -1,4 +1,4 @@
-import { useEffect } from '@wordpress/element';
+import { useEffect, useRef } from '@wordpress/element';
 
 import { tabController } from '../../Components/Helper/functions';
 
@@ -14,6 +14,8 @@ const Edit = props => {
 	useEffect(() => { clientId && setAttributes({ cId: clientId.substring(0, 10) }); }, [clientId]); // Set & Update clientId to cId
 
 	useEffect(() => tabController(), [isSelected]);
+
+	const lottieEl = useRef(null);
 
 	// Set or Remove attributes
 	const lottieWrapper = document.querySelector(`#lpbLottiePlayer-${clientId} .lpbLottiePlayer`);
@@ -49,7 +51,7 @@ const Edit = props => {
 			<Style attributes={attributes} clientId={clientId} />
 
 			<div className='lpbLottiePlayer'>
-				<LottiePlayer attributes={attributes} />
+				<LottiePlayer ref={lottieEl} attributes={attributes} />
 			</div>
 		</div>
 	</>;

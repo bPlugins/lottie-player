@@ -30,8 +30,8 @@ class LPBLottiePlayer{
 	}
 
 	function onPluginActivate(){
-		if ( is_plugin_active( 'embed-lottie-player-pro/plugin.php' ) ){
-			deactivate_plugins( 'embed-lottie-player-pro/plugin.php' );
+		if ( is_plugin_active( 'lottie-player-pro/plugin.php' ) ){
+			deactivate_plugins( 'lottie-player-pro/plugin.php' );
 		}
 	}
 

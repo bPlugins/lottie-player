@@ -1,4 +1,4 @@
-import { render, useEffect } from '@wordpress/element';
+import { render, useEffect, useRef } from '@wordpress/element';
 
 import './style.scss';
 import Style from './Style';
@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const RenderLottiePlayer = ({ attributes, clientId }) => {
 	const { isControls, isAutoplay, isLoop, link } = attributes;
 
+	const lottieEl = useRef(null);
+
 	useEffect(() => {
 		const lottiePlayer = document.querySelector(`#lpbLottiePlayer-${clientId} .lpbLottiePlayer lottie-player`);
 
@@ -34,6 +36,6 @@ const RenderLottiePlayer = ({ attributes, clientId }) => {
 	}, []);
 
 	return <div className='lpbLottiePlayer'>
-		{link ? <a href={link}><LottiePlayer attributes={attributes} /></a> : <LottiePlayer attributes={attributes} />}
+		{link ? <a href={link}><LottiePlayer ref={lottieEl} attributes={attributes} /></a> : <LottiePlayer ref={lottieEl} attributes={attributes} />}
 	</div>
 }

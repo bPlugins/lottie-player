@@ -3,7 +3,7 @@ Contributors: abuhayat, charlescormier
 Donate link: https://gum.co/wpdonate/
 Tags: lottie, block, Gutenberg block, animation, animations, motion
 Requires at least: 5.3+
-Tested up to: 6.0.3
+Tested up to: 6.1.1
 Stable tag: 1.0.8
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -18,8 +18,8 @@ Lottie Player is a helpful block Plugin for WordPress's Gutenberg block editor. 
 You can embed any LottieFiles animations, json files to your WordPress Posts, Pages, Widgets and more. This plugin packed with many useful features. You can show your Lottie files exactly the way you want. This plugin has a huge number of options that you can use to achieve your desired goal.
 
 
-**[Live Demo](https://lpb.bplugins.com/)**
-**[Buy The PRO Version](https://lpb.bplugins.com/buy-now/)**
+**[Live Demo](https://bplugins.com/products/lottie-player)**
+**[Buy The PRO Version](https://bplugins.com/products/lottie-player/#pricing)**
 
 
 = Features =

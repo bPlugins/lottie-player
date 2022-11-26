@@ -44,7 +44,7 @@ const Settings = ({ attributes, setAttributes }) => {
 
 
 					<PanelBody className='bPlPanelBody' title={__('Player Settings', 'lottie-player')}>
-						<Title mt='0'>{__('Lottie Json file url:', 'lottie-player')}</Title>
+						<Title className='mb5'>{__('Lottie Json file url:', 'lottie-player')}</Title>
 						<TextControl value={file} onChange={val => setAttributes({ file: val })} />
 
 						<ToggleControl className='mt20' label={__('Show Controls', 'lottie-player')} checked={isControls} onChange={val => setAttributes({ isControls: val })} />
@@ -62,7 +62,7 @@ const Settings = ({ attributes, setAttributes }) => {
 						{/* <ToggleControl label={__('Enable Hover', 'lottie-player')} checked={isHover} onChange={val => setAttributes({ isHover: val })} />
 
 						<PanelRow className='mt20'>
-							<Title mt='0' mb='0'>{__('Mode:', 'lottie-player')}</Title>
+							<Title className=''>{__('Mode:', 'lottie-player')}</Title>
 							<BtnGroup value={mode} onChange={val => setAttributes({ mode: val })} options={modes} />
 						</PanelRow>
 

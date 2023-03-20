@@ -5,7 +5,7 @@ import { tabController } from '../../Components/Helper/functions';
 import Settings from './Settings';
 import Style from './Style';
 import LottiePlayer from './LottiePlayer';
-import { toggleAttr } from './Const/functions';
+import { toggleAttr } from './utils/functions';
 
 const Edit = props => {
 	const { className, attributes, setAttributes, clientId, isSelected } = props;

@@ -47,8 +47,8 @@ class LPBLottiePlayer{
 	}
 
 	function onInit() {
-		wp_register_style( 'lpb-lottie-player-editor-style', plugins_url( 'dist/editor.css', __FILE__ ), [ 'wp-edit-blocks' ], LPB_PLUGIN_VERSION ); // Backend Style
-		wp_register_style( 'lpb-lottie-player-style', plugins_url( 'dist/style.css', __FILE__ ), [], LPB_PLUGIN_VERSION ); // Frontend Style
+		wp_register_style( 'lpb-lottie-player-editor-style', plugins_url( 'dist/editor.css', __FILE__ ), [ 'lpb-lottie-player-style' ], LPB_PLUGIN_VERSION ); // Backend Style
+		wp_register_style( 'lpb-lottie-player-style', plugins_url( 'dist/style.css', __FILE__ ), [], LPB_PLUGIN_VERSION ); // Style
 
 		register_block_type( __DIR__, [
 			'editor_style'		=> 'lpb-lottie-player-editor-style',
@@ -63,10 +63,10 @@ class LPBLottiePlayer{
 		extract( $attributes );
 
 		$className = $className ?? '';
-		$lpbBlockClassName = 'wp-block-lpb-lottie-player ' . $className . ' align' . $align;
+		$blockClassName = 'wp-block-lpb-lottie-player ' . $className . ' align' . $align;
 
 		ob_start(); ?>
-		<div class='<?php echo esc_attr( $lpbBlockClassName ); ?>' id='lpbLottiePlayer-<?php echo esc_attr( $cId ); ?>' data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'></div>
+		<div class='<?php echo esc_attr( $blockClassName ); ?>' id='lpbLottiePlayer-<?php echo esc_attr( $cId ); ?>' data-attributes='<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>'></div>
 
 		<?php return ob_get_clean();
 	} // Render

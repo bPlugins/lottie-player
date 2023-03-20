@@ -7,9 +7,10 @@ import { PanelBody, ToggleControl, __experimentalUnitControl as UnitControl, Tex
 import Title from '../../Components/Title';
 import BColor from '../../Components/BColor';
 import { tabController } from '../../Components/Helper/functions';
+import { pxUnit, perUnit, emUnit } from '../../Components/Helper/options';
 
-import options from './Const/options';
-const { interactivities, generalStyleTabs, pxUnit, perUnit, emUnit } = options;
+import options from './utils/options';
+const { interactivities, generalStyleTabs } = options;
 
 const Settings = ({ attributes, setAttributes }) => {
 	const { playerAlign, file, isControls, isAutoplay, isLoop, link, width, background, controlsHeight, controlsBG, controlsIconColor, controlsIconHoverColor, controlsIconActiveColor, controlsTrackColor, controlsThumbColor } = attributes;
@@ -49,11 +50,11 @@ const Settings = ({ attributes, setAttributes }) => {
 
 						<ToggleControl className='mt20' label={__('Show Controls', 'lottie-player')} checked={isControls} onChange={val => setAttributes({ isControls: val })} />
 
-						<ToggleControl label={__('Enable Autoplay', 'lottie-player')} checked={isAutoplay} onChange={val => setAttributes({ isAutoplay: val })} />
+						<ToggleControl className='mt10' label={__('Enable Autoplay', 'lottie-player')} checked={isAutoplay} onChange={val => setAttributes({ isAutoplay: val })} />
 
-						<ToggleControl label={__('Enable Loop', 'lottie-player')} checked={isLoop} onChange={val => setAttributes({ isLoop: val })} />
+						<ToggleControl className='mt10' label={__('Enable Loop', 'lottie-player')} checked={isLoop} onChange={val => setAttributes({ isLoop: val })} />
 
-						<ProToggle label={__('Enable Hover', 'lottie-player')} checked={false} />
+						<ProToggle className='mt10' label={__('Enable Hover', 'lottie-player')} checked={false} />
 						<ProTitle label={__('Mode:', 'lottie-player')} />
 						<ProTitle label={__('Direction:', 'lottie-player')} />
 						<ProTitle label={__('Count:', 'lottie-player')} />
@@ -98,14 +99,14 @@ const Settings = ({ attributes, setAttributes }) => {
 
 				{'style' == tab.name && <>
 					<PanelBody className='bPlPanelBody' title={__('Player', 'lottie-player')}>
-						<UnitControl label={__('Width:', 'lottie-player')} labelPosition='left' value={width} onChange={val => setAttributes({ width: val })} units={[pxUnit, perUnit, emUnit]} />
+						<UnitControl label={__('Width:', 'lottie-player')} labelPosition='left' value={width} onChange={val => setAttributes({ width: val })} units={[pxUnit(), perUnit(), emUnit()]} />
 
 						<BColor label={__('Background Color:', 'lottie-player')} value={background} onChange={val => setAttributes({ background: val })} defaultColor='#0000' />
 					</PanelBody>
 
 
 					{isControls && <PanelBody className='bPlPanelBody' title={__('Controls', 'lottie-player')} initialOpen={false}>
-						<UnitControl label={__('Height:', 'lottie-player')} labelPosition='left' value={controlsHeight} onChange={val => setAttributes({ controlsHeight: val })} units={[pxUnit, perUnit, emUnit]} />
+						<UnitControl label={__('Height:', 'lottie-player')} labelPosition='left' value={controlsHeight} onChange={val => setAttributes({ controlsHeight: val })} units={[pxUnit(), perUnit(), emUnit()]} />
 
 						<BColor label={__('Background Color:', 'lottie-player')} value={controlsBG} onChange={val => setAttributes({ controlsBG: val })} defaultColor='#0000' />
 

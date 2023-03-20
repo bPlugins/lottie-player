@@ -3,7 +3,7 @@ import { render, useEffect, useRef } from '@wordpress/element';
 import './style.scss';
 import Style from './Style';
 import LottiePlayer from './LottiePlayer';
-import { toggleAttr } from './Const/functions';
+import { toggleAttr } from './utils/functions';
 
 // Lottie Player
 document.addEventListener('DOMContentLoaded', () => {

@@ -3,7 +3,7 @@ import { registerBlockType, updateCategory } from '@wordpress/blocks';
 import metadata from '../block.json';
 import Edit from './Edit';
 import './editor.scss';
-import icons from './Const/icons';
+import icons from './utils/icons';
 
 // Update Block Category Icon
 updateCategory('LPBlock', { icon: icons.lottie(20) });

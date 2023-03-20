@@ -1,4 +1,4 @@
-# Copyright (C) 2022 bPlugins LLC
+# Copyright (C) 2023 bPlugins LLC
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-04T16:25:57+00:00\n"
+"POT-Creation-Date: 2023-03-20T16:51:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: lottie-player\n"
@@ -31,275 +31,275 @@ msgid "http://bplugins.com"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:118
+#: dist/editor.js:189
 msgid "Normal"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:119
+#: dist/editor.js:190
 msgid "Bounce"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:123
+#: dist/editor.js:194
 msgid "No Interactivity (Pro)"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:124
+#: dist/editor.js:195
 msgid "Sync with scroll (Pro)"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:125
+#: dist/editor.js:196
 msgid "Scroll with offset (Pro)"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:126
+#: dist/editor.js:197
 msgid "Sync animation with cursor position (Pro)"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:127
+#: dist/editor.js:198
 msgid "Sync animation with cursor horizontal movement (Pro)"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:128
+#: dist/editor.js:199
 msgid "Play animation on click (Pro)"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:130
+#: dist/editor.js:201
 msgid "Play animation when visible (Pro)"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:141
+#: dist/editor.js:205
 msgid "General"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:142
+#: dist/editor.js:206
 msgid "Style"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:174
-#: dist/editor.js:176
+#: dist/editor.js:229
+#: dist/editor.js:231
 msgid "Pro"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:187
+#: dist/editor.js:242
 msgid "Help"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:189
+#: dist/editor.js:244
 msgid "Read Documentation"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:194
+#: dist/editor.js:249
 msgid "Would you please rate us?"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:195
+#: dist/editor.js:250
 msgid "We are new and we need your help to grow!🙏"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:201
+#: dist/editor.js:256
 msgid "Player Settings"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:202
+#: dist/editor.js:257
 msgid "Lottie Json file url:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:205
+#: dist/editor.js:260
 msgid "Show Controls"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:207
+#: dist/editor.js:262
 msgid "Enable Autoplay"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:209
+#: dist/editor.js:264
 msgid "Enable Loop"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:211
+#: dist/editor.js:266
 msgid "Enable Hover"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:212
+#: dist/editor.js:267
 msgid "Mode:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:213
+#: dist/editor.js:268
 msgid "Direction:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:214
+#: dist/editor.js:269
 msgid "Count:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:215
+#: dist/editor.js:270
 msgid "Speed:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:216
+#: dist/editor.js:271
 msgid "Interval:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:233
+#: dist/editor.js:288
 msgid "Link the player:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:237
+#: dist/editor.js:292
 msgid "Open link in new tab"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:241
+#: dist/editor.js:296
 msgid "Interactivity"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:242
+#: dist/editor.js:297
 msgid "Interactivity:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:246
-#: dist/editor.js:279
+#: dist/editor.js:301
+#: dist/editor.js:334
 msgid "Caption"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:247
+#: dist/editor.js:302
 msgid "Show Caption"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:249
+#: dist/editor.js:304
 msgid "Text:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:255
+#: dist/editor.js:310
 msgid "Player"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:256
+#: dist/editor.js:311
 msgid "Width:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:258
-#: dist/editor.js:265
+#: dist/editor.js:313
+#: dist/editor.js:320
 msgid "Background Color:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:262
+#: dist/editor.js:317
 msgid "Controls"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:263
+#: dist/editor.js:318
 msgid "Height:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:267
+#: dist/editor.js:322
 msgid "Icons Color:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:269
+#: dist/editor.js:324
 msgid "Icons Hover Color:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:271
+#: dist/editor.js:326
 msgid "Icons Active Color:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:273
+#: dist/editor.js:328
 msgid "Track Color:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:275
+#: dist/editor.js:330
 msgid "Thumb Color:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:280
+#: dist/editor.js:335
 msgid "Text Align:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:281
+#: dist/editor.js:336
 msgid "Typography:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:282
+#: dist/editor.js:337
 msgid "Colors(text and background):"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:283
+#: dist/editor.js:338
 msgid "Padding:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:284
+#: dist/editor.js:339
 msgid "Margin:"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:293
+#: dist/editor.js:348
 msgid "Player in left"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:294
+#: dist/editor.js:349
 msgid "Player in center"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:295
+#: dist/editor.js:350
 msgid "Player in right"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:300
+#: dist/editor.js:355
 msgid "Upgrade To Pro"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:303
+#: dist/editor.js:358
 msgid "Learn More"
 msgstr ""
 

@@ -1,6 +1,6 @@
 import { useEffect, forwardRef } from '@wordpress/element';
 
-import { toggleAttr } from './Const/functions';
+import { toggleAttr } from './utils/functions';
 
 const LottiePlayer = ({ attributes }, ref) => {
 	const { file, isControls, isAutoplay, isLoop, background } = attributes;

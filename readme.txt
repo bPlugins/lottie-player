@@ -3,7 +3,7 @@ Contributors: abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: lottie, block, Gutenberg block, animation, animations, motion
 Requires at least: 5.3+
-Tested up to: 6.1.1
+Tested up to: 6.2
 Stable tag: 1.0.8
 Requires PHP: 7.1
 License: GPLv3 or later

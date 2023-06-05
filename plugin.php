@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Lottie Player - Block
+ * Plugin Name: Lottie Player - Block Old
  * Description: Lottie player for display lottie files.
  * Version: 1.0.8
  * Author: bPlugins LLC

@@ -1,13 +1,12 @@
+import { useState } from 'react';
 import { __ } from '@wordpress/i18n';
-import { useState } from '@wordpress/element';
 import { InspectorControls, AlignmentToolbar, BlockControls } from '@wordpress/block-editor';
 import { PanelBody, ToggleControl, __experimentalUnitControl as UnitControl, TextControl, TabPanel, Dashicon, Modal, SelectControl } from '@wordpress/components';
 
 // Settings Components
-import Title from '../../Components/Title';
-import BColor from '../../Components/BColor';
-import { tabController } from '../../Components/Helper/functions';
-import { pxUnit, perUnit, emUnit } from '../../Components/Helper/options';
+import { Label, BColor } from '../../Components';
+import { tabController } from '../../Components/utils/functions';
+import { pxUnit, perUnit, emUnit } from '../../Components/utils/options';
 
 import options from './utils/options';
 const { interactivities, generalStyleTabs } = options;
@@ -17,7 +16,7 @@ const Settings = ({ attributes, setAttributes }) => {
 
 	const [isProModal, setIsProModal] = useState(false);
 
-	const ProTitle = ({ className, label }) => <Title><span className={`lpbMutedText ${className}`}>{label}</span> <span className='lpbUpgradePro' onClick={() => setIsProModal(true)}>{__('Pro', 'lottie-player')}</span></Title>
+	const ProTitle = ({ className, label }) => <Label><span className={`lpbMutedText ${className}`}>{label}</span> <span className='lpbUpgradePro' onClick={() => setIsProModal(true)}>{__('Pro', 'lottie-player')}</span></Label>
 
 	const ProToggle = ({ className, label, checked }) => <ToggleControl className={`lpbUpgradeProToggle ${className}`} label={<><span className='lpbMutedText'>{label}</span> <span className='lpbUpgradePro'>{__('Pro', 'lottie-player')}</span></>} checked={checked} onChange={() => setIsProModal(true)} />
 
@@ -45,7 +44,7 @@ const Settings = ({ attributes, setAttributes }) => {
 
 
 					<PanelBody className='bPlPanelBody' title={__('Player Settings', 'lottie-player')}>
-						<Title className='mb5'>{__('Lottie Json file url:', 'lottie-player')}</Title>
+						<Label className='mb5'>{__('Lottie Json file url:', 'lottie-player')}</Label>
 						<TextControl value={file} onChange={val => setAttributes({ file: val })} />
 
 						<ToggleControl className='mt20' label={__('Show Controls', 'lottie-player')} checked={isControls} onChange={val => setAttributes({ isControls: val })} />
@@ -76,7 +75,7 @@ const Settings = ({ attributes, setAttributes }) => {
 						<Title>{__('Interval (s):', 'lottie-player')}</Title>
 						<RangeControl value={intermission} onChange={val => setAttributes({ intermission: val })} min={0} max={20} step={.01} /> */}
 
-						<Title>{__('Link the player:', 'lottie-player')}</Title>
+						<Label>{__('Link the player:', 'lottie-player')}</Label>
 						<TextControl value={link} onChange={val => setAttributes({ link: val })} />
 						<small>{__('If you want to link the player, enter the link here. Otherwise, leave as blank.')}</small>
 

@@ -1,6 +1,6 @@
-import { useEffect, useRef } from '@wordpress/element';
+import { useEffect, useRef } from 'react';
 
-import { tabController } from '../../Components/Helper/functions';
+import { tabController } from '../../Components/utils/functions';
 
 import Settings from './Settings';
 import Style from './Style';

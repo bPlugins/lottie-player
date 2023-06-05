@@ -1,4 +1,4 @@
-import { useEffect, forwardRef } from '@wordpress/element';
+import { useEffect, forwardRef } from 'react';
 
 import { toggleAttr } from './utils/functions';
 

@@ -1,5 +1,3 @@
-$primaryColor: #4527a4;
-
 // Dashicon
 .dashicons {
 	font-family: dashicons !important;
@@ -12,13 +10,13 @@ $primaryColor: #4527a4;
 	}
 
 	.lpbLottiePlayer {
-		lottie-player {
+		display: flex;
+		flex-direction: column;
+
+		dotlottie-player {
 			display: inline-flex;
 			max-width: 100%;
-
-			#lottie-controls.toolbar {
-				margin: 0;
-			}
+			height: auto;
 		}
 	}
 }

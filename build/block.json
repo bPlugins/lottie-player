@@ -1,0 +1,192 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "lpb/lottie-player",
+  "title": "Lottie Player",
+  "description": "Lottie player for display lottie files.",
+  "version": "1.3.0",
+  "category": "LPBlock",
+  "keywords": [
+    "lottie player",
+    "json player",
+    "lottie animation"
+  ],
+  "textdomain": "embed-lottie-player",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": ""
+    },
+    "playerAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "file": {
+      "type": "string",
+      "default": "https://assets4.lottiefiles.com/datafiles/zc3XRzudyWE36ZBJr7PIkkqq0PFIrIBgp4ojqShI/newAnimation.json"
+    },
+    "isControls": {
+      "type": "boolean",
+      "default": true
+    },
+    "isAutoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "isLoop": {
+      "type": "boolean",
+      "default": true
+    },
+    "isHover": {
+      "type": "boolean",
+      "default": false
+    },
+    "mode": {
+      "type": "string",
+      "default": "normal"
+    },
+    "direction": {
+      "type": "number",
+      "default": 1
+    },
+    "count": {
+      "type": "number",
+      "default": 0
+    },
+    "speed": {
+      "type": "number",
+      "default": 1
+    },
+    "intermission": {
+      "type": "number",
+      "default": 0
+    },
+    "link": {
+      "type": "string",
+      "default": ""
+    },
+    "isLinkInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "interactivity": {
+      "type": "string",
+      "default": "noInteractivity"
+    },
+    "interactivityMode": {
+      "type": "string",
+      "default": ""
+    },
+    "interactivityContainer": {
+      "type": "string",
+      "default": ".wp-block-lpb-lottie-player"
+    },
+    "interactivityActions": {
+      "type": "array",
+      "default": []
+    },
+    "width": {
+      "type": "string",
+      "default": ""
+    },
+    "background": {
+      "type": "string",
+      "default": "#0000"
+    },
+    "controlsHeight": {
+      "type": "string",
+      "default": "35px"
+    },
+    "controlsBG": {
+      "type": "string",
+      "default": "#0000"
+    },
+    "controlsIconColor": {
+      "type": "string",
+      "default": "#146EF5"
+    },
+    "controlsIconHoverColor": {
+      "type": "string",
+      "default": "#FF7A00"
+    },
+    "controlsIconActiveColor": {
+      "type": "string",
+      "default": "#FF7A00"
+    },
+    "controlsTrackColor": {
+      "type": "string",
+      "default": "#FF7A00"
+    },
+    "controlsThumbColor": {
+      "type": "string",
+      "default": "#146EF5"
+    },
+    "isCap": {
+      "type": "boolean",
+      "default": false
+    },
+    "caption": {
+      "type": "string",
+      "default": "",
+      "selector": ".lpbLottiePlayer .caption"
+    },
+    "capAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "capColors": {
+      "type": "object",
+      "default": {
+        "color": "#333"
+      }
+    },
+    "capTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": {
+            "desktop": "14px"
+          }
+        }
+      }
+    },
+    "capPadding": {
+      "type": "object",
+      "default": {
+        "vertical": "5px",
+        "horizontal": "10px"
+      }
+    },
+    "capMargin": {
+      "type": "object",
+      "default": {
+        "side": 4,
+        "top": "5px"
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "editorScript": [
+    "file:./index.js",
+    "wp-api"
+  ],
+  "editorStyle": "file:./index.css",
+  "script": "dotLottiePlayer",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": [
+    "file:./view.js",
+    "wp-util"
+  ]
+}

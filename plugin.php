@@ -9,7 +9,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: embed-lottie-player
  * Requires at least: 6.5
- * Tested up to: 6.9
+ * Tested up to: 7.0
  * Requires PHP: 7.1
  */
 

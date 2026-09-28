@@ -1,10 +1,12 @@
 import { __ } from '@wordpress/i18n';
 
+import { gutenbergTabIcon } from './icons';
+
 const slug = 'embed-lottie-player';
 const webSlug = 'lottie-player';
 
 export const dashboardInfo = (info) => {
-	const { version, nonce, licenseActiveNonce } = info;
+	const { version, startUrl, adminUrl = '', licenseActiveNonce } = info;
 
 	return {
 		name: `Lottie Player`,
@@ -12,13 +14,14 @@ export const dashboardInfo = (info) => {
 		description: 'Embed any LottieFiles animations, .json or .dotlottie files to your WordPress Posts, Pages, Widgets, and more. This plugin is packed with many useful features. You can show your Lottie files exactly the way you want.',
 		slug,
 		version,
+		adminUrl,
 		displayOurPlugins: true,
 		media: {
 			logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
 			banner: `https://ps.w.org/${slug}/assets/banner-772x250.png`,
 			thumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}.png`,
 			// proThumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}-pro.png`,
-			video: '',
+			video: 'https://www.youtube.com/watch?v=y9dLIYSr5G8',
 			isYoutube: true
 		},
 		pages: {
@@ -33,68 +36,107 @@ export const dashboardInfo = (info) => {
 			public_key: 'pk_8be5ff74d8f915918e0992c8de37c'
 		},
 		licenseActiveNonce,
-		changelogs: [
-			{
-				version: '1.3.0 - 17 May 2026',
-				type: 'update',
-				list: [
-					'Update: Freemius Lite SDK to v2.2.0',
-					'Update: Block API version upgraded to v3',
-					'Fix: Minor bug fixes and code improvements for better stability'
-				]
-			},
-			{
-				version: '1.2.4 - 05 Mar 2026',
-				type: 'fix',
-				list: [
-					'Fix: SDK version mismatch.',
-					'Update: Improved internationalization (i18n) by adding proper text domains.',
-					'Fix: Caption position issues'
-				]
-			},
-			{
-				version: '1.2.3 - 23 Feb 2026',
-				type: 'update',
-				list: [
-					'Update: Admin Dashboard - Improved UI with better navigation and clearer feature organization.'
-				]
-			},
-			{
-				version: '1.2.1 - 24 Nov 2025',
-				type: 'new',
-				list: [
-					'Update SDK',
-					'New Admin UI'
-				]
-			},
-			{
-				version: '1.2.0 - 23 Apr 2025',
-				type: 'fix',
-				list: [
-					'Remove mime types.'
-				]
-			},
-			{
-				version: '1.1.8 - 27 Jan 2025',
-				type: 'update',
-				list: [
-					'Update SDK.'
-				]
-			}
-		],
-		proFeatures: [
-			__('Upload Lottie files from media library.', 'embed-lottie-player'),
-			__('Animation options like Speed, Count, Interval.', 'embed-lottie-player'),
-			__('Forward or Backward Direction.', 'embed-lottie-player'),
-			__('Interactivity to play the Animation based on different interactivity.', 'embed-lottie-player'),
-			__('Shortcode support to display lottie player anywhere.', 'embed-lottie-player')
-		],
 		startButton: {
 			label: 'Start Now',
-			url: `wp-admin/post-new.php?post_type=page&title=Lottie Player&content=<!-- wp:lpb/lottie-player /-->&nonce=${nonce}`
+			url: startUrl
 		}
 	}
 }
+
+export const welcomeInfo = (adminUrl) => ({
+	keywords: ['JSON', 'dotLottie', 'Animation', 'Interactive'],
+	keywordsLabel: 'Formats',
+	gettingStarted: {
+		tabs: [
+			{
+				key: 'gutenberg',
+				label: 'Gutenberg',
+				icon: gutenbergTabIcon,
+				steps: [
+					{
+						num: 1,
+						title: 'Add the Lottie Player Block',
+						body: 'Open the block editor on any post or page. Click the <strong>+</strong> icon or type <strong>/Lottie Player</strong> to find and insert the Lottie Player block.',
+						link: { url: `${adminUrl}post-new.php`, label: 'Open Editor' }
+					},
+					{
+						num: 2,
+						title: 'Add Your Animation File',
+						body: 'Paste the URL of your <strong>.json</strong> or <strong>.lottie</strong> animation into the <strong>Lottie file url</strong> field in the block settings sidebar. With Pro, upload files directly from the WordPress media library.'
+					},
+					{
+						num: 3,
+						title: 'Configure Playback',
+						body: 'Turn <strong>Autoplay</strong>, <strong>Loop</strong>, and <strong>Show Controls</strong> on or off. Set the player width, height, and alignment, and color the control bar to match your design.'
+					},
+					{
+						num: 4,
+						title: 'Link & Publish',
+						body: 'Optionally add a link to the player, then publish. Captions, hover play, direction, speed, and <strong>Interactivity</strong> are available in Pro.'
+					}
+				]
+			}
+		]
+	},
+	changelogs: [
+		{
+			version: '1.3.0 - 17 May 2026',
+			type: 'update',
+			list: [
+				'<strong>Update:</strong> Freemius Lite SDK to v2.2.0',
+				'<strong>Update:</strong> Block API version upgraded to v3',
+				'<strong>Fix:</strong> Minor bug fixes and code improvements for better stability'
+			]
+		},
+		{
+			version: '1.2.4 - 05 Mar 2026',
+			type: 'fix',
+			list: [
+				'<strong>Fix:</strong> SDK version mismatch.',
+				'<strong>Update:</strong> Improved internationalization (i18n) by adding proper text domains.',
+				'<strong>Fix:</strong> Caption position issues'
+			]
+		},
+		{
+			version: '1.2.3 - 23 Feb 2026',
+			type: 'update',
+			list: [
+				'<strong>Update:</strong> Admin Dashboard - Improved UI with better navigation and clearer feature organization.'
+			]
+		},
+		{
+			version: '1.2.1 - 24 Nov 2025',
+			type: 'new',
+			list: [
+				'<strong>Update:</strong> SDK',
+				'<strong>New:</strong> Admin UI redesign'
+			]
+		},
+		{
+			version: '1.2.0 - 23 Apr 2025',
+			type: 'fix',
+			list: [
+				'<strong>Fix:</strong> Removed mime types.'
+			]
+		},
+		{
+			version: '1.1.8 - 27 Jan 2025',
+			type: 'update',
+			list: [
+				'<strong>Update:</strong> SDK.'
+			]
+		}
+	],
+	changelogsLimit: 2,
+	changelogsReadMoreLabel: 'View More Changelogs',
+	proFeatures: [
+		__('Upload Lottie files from media library.', 'embed-lottie-player'),
+		__('Animation options like Speed, Count, Interval.', 'embed-lottie-player'),
+		__('Forward or Backward Direction.', 'embed-lottie-player'),
+		__('Interactivity to play the Animation based on different interactivity.', 'embed-lottie-player'),
+		__('Shortcode support to display lottie player anywhere.', 'embed-lottie-player')
+	],
+})
 
 export const demoInfo = {
 	// allInOneLabel: 'See All Demos',

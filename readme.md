@@ -36,13 +36,13 @@ Unlock advanced playback and interactivity controls:
 - **Interval:** Add a pause between animation loops.
 - **Open Link in New Tab:** Force the player link to open in a new browser tab.
 - **Interactivity:** Sync animations with user actions:
-  - Sync with scroll
-  - Scroll relative to container
-  - Scroll with offset
-  - Sync with cursor position
-  - Sync with cursor horizontal movement
-  - Play on click
-  - Play when visible
+	- Sync with scroll
+	- Scroll relative to container
+	- Scroll with offset
+	- Sync with cursor position
+	- Sync with cursor horizontal movement
+	- Play on click
+	- Play when visible
 - **Caption:** Display a text caption below the player.
 - **Caption Styles:** Control caption Text Alignment, Typography, Text Color, Background Color, Padding, and Margin.
 
@@ -79,40 +79,40 @@ Unlock advanced playback and interactivity controls:
 ```
 embed-lottie-player/
 ├── src/
-│   ├── block.json               # Block metadata and attribute definitions
-│   ├── index.js                 # Block editor entry point (register block)
-│   ├── render.php               # Server-side render template
-│   ├── view.js                  # Frontend entry point (interactivity)
-│   ├── Components/
-│   │   ├── Backend/             # Gutenberg Editor (Edit) components
-│   │   └── Common/              # Shared components (player, styles)
-│   ├── admin/                   # Admin dashboard (React SPA)
-│   └── utils/                   # Shared utility functions, icons, options
+│	├── block.json			# Block metadata and attribute definitions
+│	├── index.js			# Block editor entry point (register block)
+│	├── render.php			# Server-side render template
+│	├── view.js				# Frontend entry point (interactivity)
+│	├── Components/
+│	│	├── Backend/		# Gutenberg Editor (Edit) components
+│	│	└── Common/			# Shared components (player, styles)
+│	├── admin/				# Admin dashboard (React SPA)
+│	└── utils/				# Shared utility functions, icons, options
 ├── includes/
-│   ├── admin/SubMenu.php        # Registers the admin sub-menu page
-│   └── fs-lite.php              # Freemius Lite SDK bootstrap
+│	├── admin/SubMenu.php	# Registers the admin sub-menu page
+│	└── fs-lite.php			# Freemius Lite SDK bootstrap
 ├── public/js/
-│   └── dotlottie-player.js      # Bundled dotLottie player web component
-├── build/                       # Compiled assets (do not edit)
-├── languages/                   # Translation files (.pot, .po, .mo)
-└── plugin.php                   # Main plugin bootstrap file
+│	└── dotlottie-player.js	# Bundled dotLottie player web component
+├── build/					# Compiled assets (do not edit)
+├── languages/				# Translation files (.pot, .po, .mo)
+└── plugin.php				# Main plugin bootstrap file
 ```
 
 ### Development Workflow
 
 1. **Clone** into your local WordPress `wp-content/plugins/` directory.
 2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+	```bash
+	npm install
+	```
 3. **Start development mode** (watch + hot rebuild):
-   ```bash
-   npm start
-   ```
+	```bash
+	npm start
+	```
 4. **Production build:**
-   ```bash
-   npm run build
-   ```
+	```bash
+	npm run build
+	```
 
 ### Block Attributes
 
@@ -145,12 +145,12 @@ Embed any saved Lottie Player configuration by its post ID:
 
 ## Useful Links
 
-- [Live Demo](https://bplugins.com/products/lottie-player)
-- [Documentation](https://bplugins.com/docs/lottie-player)
+- [Live Demo](https://bplugins.com/products/lottie-player/)
+- [Documentation](https://bplugins.com/docs/lottie-player/)
 - [WordPress.org Plugin Page](https://wordpress.org/plugins/embed-lottie-player/)
 - [Support Forum](https://wordpress.org/support/plugin/embed-lottie-player/)
-- [GitHub Repository](https://github.com/bPlugins/lottie-player)
-- [Upgrade to Pro](https://bplugins.com/products/lottie-player/pricing)
+- [GitHub Repository](https://github.com/bPlugins/lottie-player/)
+- [Upgrade to Pro](https://bplugins.com/products/lottie-player/pricing/)
 
 ---
 

@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useBlockProps } from '@wordpress/block-editor';
 
+import useIframeAssetSync from '../../../../bpl-tools/hooks/useIframeAssetSync';
+
 import Settings from './Settings/Settings';
 import Style from '../Common/Style';
 import DotLottiePlayer from '../Common/DotLottiePlayer';
@@ -8,17 +10,17 @@ import { toggleAttr } from '../../utils/functions';
 import { prefix } from '../../utils/data';
 
 const Edit = props => {
-	const { attributes, setAttributes, clientId } = props;
+	const { attributes, setAttributes } = props;
 	const { file, isControls, isAutoplay, isLoop, background } = attributes;
 
 	const blockProps = useBlockProps();
 
+	useIframeAssetSync(['lpb-lottie-player-editor-style-css', 'lpb-lottie-player-style-css']);
+
 	const lottieEl = useRef(null);
 
-	const id = `${prefix}-${clientId}`;
-
 	// Set or Remove attributes
-	const lottieWrapper = document.querySelector(`#${id} .${prefix}`);
+	const lottieWrapper = document.querySelector(`#${blockProps.id} .${prefix}`);
 
 	useEffect(() => {
 		lottieWrapper ? lottieWrapper.innerHTML = '' : '';

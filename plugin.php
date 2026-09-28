@@ -5,12 +5,13 @@
  * Version: 1.3.0
  * Author: bPlugins
  * Author URI: https://bplugins.com
+ * Plugin URI: https://bplugins.com/products/lottie-player/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: embed-lottie-player
  * Requires at least: 6.5
- * Tested up to: 7.0
- * Requires PHP: 7.1
+ * Tested up to: 7.1
+ * Requires PHP: 7.4
  */
 
 // ABS PATH
@@ -101,12 +102,18 @@ if ( function_exists( 'lpb_fs' ) ) {
 				wp_register_script( 'dotLottiePlayer', LPB_DIR_URL . '/public/js/dotlottie-player.js', [], '1.5.7', true );
 			}
 
-			static function renderDashboard(){ ?>
+			/**
+			 * Renders the dashboard container for the React app.
+			 *
+			 * @return void
+			 */
+			public static function renderDashboard(){ ?>
 				<div
 					id='lpbDashboard'
 					data-info='<?php echo esc_attr( wp_json_encode( [
 						'version' => LPB_VERSION,
-						'nonce' => wp_create_nonce( 'lpbCreatePage' ),
+						'adminUrl' => admin_url(),
+						'startUrl' => admin_url( 'post-new.php?post_type=page&title=' . rawurlencode( 'Lottie Player' ) . '&content=' . rawurlencode( '<!-- wp:lpb/lottie-player /-->' ) . '&nonce=' . wp_create_nonce( 'lpbCreatePage' ) ),
 						'licenseActiveNonce' => wp_create_nonce( 'bPlLicenseActivation' )
 					] ) ); ?>'
 				></div>

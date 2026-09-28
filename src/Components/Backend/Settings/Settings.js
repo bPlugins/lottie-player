@@ -29,7 +29,7 @@ const Settings = ({ attributes, setAttributes }) => {
 
 			<TabPanel className='bPlTabPanel' activeClass='activeTab' tabs={generalStyleTabs} onSelect={tabController}>{tab => <>
 				{'general' === tab.name && <>
-					<HelpPanel slug='embed-lottie-player' docsLink='https://bplugins.com/docs/lottie-player' />
+					<HelpPanel slug='embed-lottie-player' docsLink='https://bplugins.com/docs/lottie-player/' />
 
 
 					<PanelBody className='bPlPanelBody' title={__('Player', 'embed-lottie-player')}>

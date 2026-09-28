@@ -1,11 +1,11 @@
-=== Embed Lottie Player – Add Interactive Lottie Animations with Block Support ===
+=== Embed Lottie Player – Bring your pages to life with animation ===
 Contributors: bplugins, abuhayat, charlescormier, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, lottie, animations, motion, Gutenberg block
 Requires at least: 6.5
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 1.3.0
-Requires PHP: 7.1
+Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,6 +14,8 @@ Lottie Player lets you embed any type of LottieFiles animations into WordPress G
 == Description ==
 
 You can embed any LottieFiles animations, .json or .dotlottie files to your WordPress Posts, Pages, Widgets, and more. This plugin is packed with many useful features. You can show your Lottie files exactly the way you want.
+
+https://youtube.com/watch?v=y9dLIYSr5G8
 
 This plugin has a huge number of options that you can use to achieve your desired goal.
 
@@ -29,7 +31,7 @@ Additionally, you can display captions below the player and customize their appe
 
 With its features, this plugin offers a comprehensive solution for integrating and customizing Lottie animations to elevate the visual appeal and interactivity of your WordPress website.
 
-[Plugin Demo](https://bplugins.com/products/lottie-player) | [Documentation](https://bplugins.com/docs/lottie-player) | [Get Pro Version](https://bplugins.com/products/lottie-player/pricing)
+[Plugin Demo](https://bplugins.com/products/lottie-player/) | [Documentation](https://bplugins.com/docs/lottie-player/) | [Get Pro Version](https://bplugins.com/products/lottie-player/pricing/)
 
 
 ### Lottie Player Features
@@ -305,7 +307,7 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 * **GitHub:** [https://github.com/bPlugins/freemius-lite-sdk](https://github.com/bPlugins/freemius-lite-sdk)
 * **License:** GPL-2.0-or-later – [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
 * **Purpose:** Provides an opt-in consent form for usage tracking and analytics to help improve the plugin. No data is sent before explicit user consent.
-* **External Services:** Communicates with `api.bplugins.com` (activation events) and `wp.freemius.com` (opt-in processing) only after user opt-in. See [bPlugins Privacy Policy](https://bplugins.com/privacy-policy) and [Freemius Privacy Policy](https://freemius.com/privacy/).
+* **External Services:** Communicates with `api.bplugins.com` (activation events) and `wp.freemius.com` (opt-in processing) only after user opt-in. See [bPlugins Privacy Policy](https://bplugins.com/privacy-policy/) and [Freemius Privacy Policy](https://freemius.com/privacy/).
 
 = bpl-tools =
 * Source / GitHub: https://github.com/bPlugins/bpl-tools
